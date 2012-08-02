@@ -13,12 +13,12 @@ end
 
 git "Syncing x264" do
   repository "git://git.videolan.org/x264"
-  destination "/tmp/ffmpeg-install/x264"
+  destination "/tmp/x264"
   action :sync
 end
 
 bash "Compiling x264" do
-  cwd "/tmp/ffmpeg-install/x264"
+  cwd "/tmp/x264"
   code <<-EOH
     ./configure
     make

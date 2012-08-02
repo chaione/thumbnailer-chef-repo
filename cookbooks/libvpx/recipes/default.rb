@@ -14,12 +14,12 @@ end
 
 git "Syncing libpvx" do
   repository "git://git.chromium.org/webm/libvpx.git"
-  destination "/tmp/ffmpeg-install/libvpx"
+  destination "/tmp/libvpx"
   action :sync
 end
 
 bash "Compiling libvpx" do
-  cwd "/tmp/ffmpeg-install/libvpx"
+  cwd "/tmp/libvpx"
   code <<-EOH
     ./configure
     make
