@@ -39,8 +39,8 @@ bash "Compiling x264" do
     ./configure
     make
     sudo checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | \
-    awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes \
-    --fstrans=no --default
+      awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes \
+      --fstrans=no --default
   EOH
 end
 
@@ -56,7 +56,7 @@ bash "Compiling libvpx" do
     ./configure
     make
     sudo checkinstall --pkgname=libvpx --pkgversion="1:$(date +%Y%m%d%H%M)-git" --backup=no \
-          --deldoc=yes --fstrans=no --default
+      --deldoc=yes --fstrans=no --default
   EOH
 end
 
