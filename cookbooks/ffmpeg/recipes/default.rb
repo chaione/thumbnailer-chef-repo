@@ -7,7 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#package "build-essential"
+# Source: https://ffmpeg.org/trac/ffmpeg/wiki/UbuntuCompilationGuide
+
+package "build-essential"
 package "checkinstall"
 package "git-core"
 
