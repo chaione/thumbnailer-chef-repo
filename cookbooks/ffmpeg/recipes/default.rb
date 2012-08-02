@@ -27,39 +27,6 @@ directory "/tmp/ffmpeg-install" do
   action :create
 end
 
-git "Syncing x264" do
-  repository "git://git.videolan.org/x264"
-  destination "/tmp/ffmpeg-install/x264"
-  action :sync
-end
-
-bash "Compiling x264" do
-  cwd "/tmp/ffmpeg-install/x264"
-  code <<-EOH
-    ./configure
-    make
-    sudo checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | \
-      awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes \
-      --fstrans=no --default
-  EOH
-end
-
-git "Syncing libpvx" do
-  repository "git://git.chromium.org/webm/libvpx.git"
-  destination "/tmp/ffmpeg-install/libvpx"
-  action :sync
-end
-
-bash "Compiling libvpx" do
-  cwd "/tmp/ffmpeg-install/libvpx"
-  code <<-EOH
-    ./configure
-    make
-    sudo checkinstall --pkgname=libvpx --pkgversion="1:$(date +%Y%m%d%H%M)-git" --backup=no \
-      --deldoc=yes --fstrans=no --default
-  EOH
-end
-
 git "Syncing ffmpeg" do
   depth 1
   repository "git://source.ffmpeg.org/ffmpeg"
