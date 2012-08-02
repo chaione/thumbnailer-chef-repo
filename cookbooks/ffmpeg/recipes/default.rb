@@ -23,14 +23,14 @@ package "texi2html"
 package "yasm"
 package "zlib1g-dev"
 
-directory "/tmp/ffmpeg-install" do
+directory "/tmp/ffmpeg" do
   action :create
 end
 
 git "Syncing ffmpeg" do
   depth 1
   repository "git://source.ffmpeg.org/ffmpeg"
-  destination "/tmp/ffmpeg-install/ffmpeg"
+  destination "/tmp/ffmpeg"
   action :sync
 end
 
