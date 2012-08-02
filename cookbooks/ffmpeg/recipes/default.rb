@@ -25,8 +25,6 @@ package "zlib1g-dev"
 
 directory "/tmp/ffmpeg-install" do
   action :create
-  group "775"
-  owner "775"
 end
 
 git "/tmp/ffmpeg-install/x264" do
