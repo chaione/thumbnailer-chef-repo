@@ -20,7 +20,7 @@ end
 bash "Compiling x264" do
   cwd "/tmp/x264"
   code <<-EOH
-    ./configure
+    ./configure --enable-static
     make
     sudo checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | \
       awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes \
