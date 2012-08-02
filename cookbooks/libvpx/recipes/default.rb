@@ -13,7 +13,7 @@ directory "/tmp/libvpx" do
 end
 
 git "Syncing libpvx" do
-  repository "git://git.chromium.org/webm/libvpx.git"
+  repository "http://git.chromium.org/webm/libvpx.git"
   destination "/tmp/libvpx"
   action :sync
 end
