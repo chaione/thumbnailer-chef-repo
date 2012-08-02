@@ -27,8 +27,9 @@ directory "/tmp/ffmpeg-install" do
   action :create
 end
 
-git "/tmp/ffmpeg-install/x264" do
-  remote "git://git.videolan.org/x264"
+git "Syncing x264" do
+  repository "git://git.videolan.org/x264"
+  destination "/tmp/ffmpeg-install/x264"
   action :sync
 end
 
@@ -43,8 +44,9 @@ bash "Compiling x264" do
   EOH
 end
 
-git "/tmp/ffmpeg-install/libvpx" do
-  remote "git://git.chromium.org/webm/libvpx.git"
+git "Syncing libpvx" do
+  repository "git://git.chromium.org/webm/libvpx.git"
+  destination "/tmp/ffmpeg-install/libvpx"
   action :sync
 end
 
@@ -58,9 +60,10 @@ bash "Compiling libvpx" do
   EOH
 end
 
-git "/tmp/ffmpeg-install/ffmpeg" do
+git "Syncing ffmpeg" do
   depth 1
   repository "git://source.ffmpeg.org/ffmpeg"
+  destination "/tmp/ffmpeg-install/ffmpeg"
   action :sync
 end
 
