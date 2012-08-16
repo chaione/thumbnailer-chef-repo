@@ -11,7 +11,7 @@ user "Creating #{node['thumbnailer']['user']} User" do
   username node['thumbnailer']['user']
   action :create
   shell "/bin/bash"
-  supports {:manage_home => true}
+  supports({:manage_home => true})
 end
 
 group "Creating #{node['thumbnailer']['group']} Group" do
