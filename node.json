@@ -1,7 +1,7 @@
 {
   "name": "thumbnailer",
   "description": "A restful thumbnailing service",
-  "run_list": ["apache2", "apache2::mod_proxy", "x264", "libpvx", "ffmpeg", "thumbnailer"],
+  "run_list": ["apache2", "apache2::mod_proxy", "x264", "libvpx", "ffmpeg", "thumbnailer"],
   "default_attributes": {
     "thumbnailer": {
       "install_dir": "/var/app/thumbnailer",

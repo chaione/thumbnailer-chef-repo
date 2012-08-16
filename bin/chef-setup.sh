@@ -14,9 +14,9 @@ echo "Updating apt"
 apt-get update
 
 echo "Installing chef-server"
-apt-get install opscode-keyring
-apt-get install chef chef-server
+apt-get install opscode-keyring -y
+apt-get install chef -y
 
-echo "Cloning cookbook repo"
-mkdir -p /var/chef/
-git clone git://github.com/chaione/thumbnailer-chef-repo.git /var/chef/
+# echo "Cloning cookbook repo"
+# mkdir -p /var/chef/
+# git clone git://github.com/chaione/thumbnailer-chef-repo.git /var/chef/
