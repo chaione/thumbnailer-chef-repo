@@ -46,4 +46,4 @@ bash "Compiling ffmpeg" do
   EOH
 end
 
-execute "hash x264 ffmpeg ffplay ffprobe"
+execute "hash x264 ffmpeg ffprobe"
