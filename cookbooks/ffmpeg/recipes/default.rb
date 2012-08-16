@@ -33,7 +33,7 @@ git "Syncing ffmpeg" do
 end
 
 bash "Compiling ffmpeg" do
-  cwd "/tmp/ffmpeg-install/ffmpeg"
+  cwd "/tmp/ffmpeg"
   code <<-EOH
     ./configure --enable-gpl --enable-libfaac --enable-libmp3lame --enable-libopencore-amrnb \
       --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libvpx \
