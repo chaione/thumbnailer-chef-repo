@@ -7,6 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
+package "build-essential"
+package "checkinstall"
+
 directory "/tmp/x264" do
   action :create
 end

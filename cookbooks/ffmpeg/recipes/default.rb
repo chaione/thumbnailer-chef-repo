@@ -9,8 +9,6 @@
 
 # Source: https://ffmpeg.org/trac/ffmpeg/wiki/UbuntuCompilationGuide
 
-package "build-essential"
-package "checkinstall"
 package "git-core"
 
 package "libfaac-dev"
