@@ -1,0 +1,4 @@
+ProxyRequests Off
+ProxyPass / http://127.0.0.1:<%= @node['thumbnailer']['port'] %>/
+ProxyPassReverse / http://127.0.0.1:9292/
+ProxyPreserveHost on
