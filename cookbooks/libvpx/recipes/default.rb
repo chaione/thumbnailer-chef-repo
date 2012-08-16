@@ -10,6 +10,16 @@
 package "build-essential"
 package "checkinstall"
 
+package "libfaac-dev"
+package "libmp3lame-dev"
+package "libopencore-amrnb-dev"
+package "libopencore-amrwb-dev"
+package "libtheora-dev"
+package "libvorbis-dev"
+package "texi2html"
+package "yasm"
+package "zlib1g-dev"
+
 
 directory "/tmp/libvpx" do
   action :create
