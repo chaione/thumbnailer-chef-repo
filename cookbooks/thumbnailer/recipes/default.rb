@@ -36,7 +36,7 @@ template "Adding apache proxy" do
   source "thumbnailer-proxy.erb"
 end
 
-service "apache" do
+service "apache2" do
   supports :restart => true, :reload => true
-  action :enable
+  action :restart
 end
