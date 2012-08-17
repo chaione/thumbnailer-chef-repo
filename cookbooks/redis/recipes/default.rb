@@ -7,4 +7,4 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package "redis"
+package "redis-server"

@@ -5,8 +5,8 @@
   "default_attributes": {
     "thumbnailer": {
       "install_dir": "/var/app/thumbnailer",
-      "user": "thumbnailer",
-      "group": "thumbnailer",
+      "user": "app",
+      "group": "app",
       "hostname": "thumbnailer.gameplanhq.com",
       "port": 9999
     }
