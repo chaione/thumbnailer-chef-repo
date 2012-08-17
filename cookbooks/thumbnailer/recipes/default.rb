@@ -32,7 +32,7 @@ end
 
 template "Adding apache proxy" do
   action :create
-  path "#{node['apache']['dir']}/sites-available"
+  path "#{node['apache']['dir']}/sites-available/thumbnailer-proxy"
   source "thumbnailer-proxy.erb"
 end
 
