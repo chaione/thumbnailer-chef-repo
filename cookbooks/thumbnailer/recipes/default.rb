@@ -27,6 +27,7 @@ directory "Creating app directory for #{node['thumbnailer']['install_dir']}" do
   group node['thumbnailer']['group']
   path  node['thumbnailer']['install_dir']
   mode '0775'
+  recursive true
 end
 
 template "Adding apache proxy" do
