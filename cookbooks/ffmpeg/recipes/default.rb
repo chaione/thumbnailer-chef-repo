@@ -43,5 +43,3 @@ bash "Compiling ffmpeg" do
       --deldoc=yes --fstrans=no --default
   EOH
 end
-
-execute "hash x264 ffmpeg ffprobe"
