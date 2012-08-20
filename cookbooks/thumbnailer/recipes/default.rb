@@ -64,5 +64,5 @@ end
 execute "Require .project files in .bashrc" do
   user node['thumbnailer']['user']
   command %Q{echo "source $HOME/.bash/#{env_file}" >> $HOME/.bashrc}
-  not_if {`grep "source $HOME/.bash/#{env_file}" #{home_dir}/.bashrc`}
+  not_if {`sudo -u #{node['thumbnailer']['user']} grep "source $HOME/.bash/#{env_file}" #{home_dir}/.bashrc`}
 end
