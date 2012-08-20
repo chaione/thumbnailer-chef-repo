@@ -66,3 +66,11 @@ execute "Require .project files in .bashrc" do
   command %Q{echo "source #{home_dir}/.bash/#{env_file}" >> #{home_dir}/.bashrc}
   not_if %{sudo -u #{node['thumbnailer']['user']} grep "source #{home_dir}/.bash/#{env_file}" #{home_dir}/.bashrc}
 end
+
+# TODO: Move this into a separate recipe
+execute "Installing .rvm" do
+  user node['thumbnailer']['user']
+  cwd home_dir
+  command %Q{curl -L https://get.rvm.io | bash -s stable}
+  not_if %Q{sudo -u #{node['thumbnailer']['user']} which rvm}
+end
