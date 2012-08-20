@@ -45,7 +45,7 @@ directory "ensuring .bash directory" do
   path "/home/#{node['thumbnailer']['user']}/.bash"
   owner node['thumbnailer']['user']
   group node['thumbnailer']['group']
-  mode "0644"
+  mode "0755"
 end
 
 home_dir = "/home/#{node['thumbnailer']['user']}"
