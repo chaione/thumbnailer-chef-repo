@@ -40,3 +40,29 @@ service "apache2" do
   supports :restart => true, :reload => true
   action :restart
 end
+
+directory "ensuring .bash directory" do
+  path "/home/#{node['thumbnailer']['user']}/.bash"
+  owner node['thumbnailer']['user']
+  group node['thumbnailer']['group']
+  mode "0644"
+end
+
+home_dir = "/home/#{node['thumbnailer']['user']}"
+env_file = "#{node['thumbnailer']['name']}.project"
+env_path = "#{home_dir}/.bash/#{env_file}"
+
+template "Adding application environment settings" do
+  action :create
+  source "thumbnailer.project.erb"
+  mode "0644"
+  owner node['thumbnailer']['user']
+  group node['thumbnailer']['group']
+  path env_path
+end
+
+execute "Require .project files in .bashrc" do
+  user node['thumbnailer']['user']
+  command %Q{echo "source $HOME/.bash/#{env_file}" >> $HOME/.bashrc}
+  not_if {`grep "source $HOME/.bash/#{env_file}" #{home_dir}/.bashrc`}
+end
